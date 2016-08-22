@@ -1,48 +1,108 @@
 
 var quotes = [
-    {
-        quote: "To create a memorable design you need to start with a thought that’s worth remembering.",
-        source: "Thomas Manss",
-        citation: "quotesondesign.com",
-        gender: "male"
-    },
-    {
-        quote: "Luck is the residue of design.",
-        source: "Branch Rickey",
-        citation: "quotesondesign.com",
-        gender: "male"
-    },
-    {
-        quote: "Write it down. You will lose thoughts, you thought, that you thought.",
-        source: "Vanessa Workoff",
-        citation: "quotesondesign.com",
-        gender: "female"
-    },
-    {
-        quote: "Truly elegant design incorporates top-notch functionality into a simple, uncluttered form.",
-        source: "David Lewis",
-        citation: "quotesondesign.com",
-        gender: "male"
-    },
-    {
-        quote: "If it sounds good, you’ll hear it. If it looks good, you’ll see it. If it’s marketed right, you’ll buy it. But if it’s real, you’ll feel it.",
-        source: "Kid Rock",
-        citation: "rock.rapgenius.com",
-        gender: "male"
-    },
-    {
-        quote: "If you can’t explain it simply, you don’t understand it well enough.",
-        source: "Albert Einstein",
-        citation: "thinkexist.com",
-        gender: "male"
-    },
-    {
-        quote: "To see takes time.",
-        source: "Georgia O'Keeffe",
-        citation: "quotesondesign.com",
-        gender: "female"
-    }
+  {
+    "#": 1,
+    "QUOTE": "Frankly, my dear, I don't give a damn.",
+    "MOVIE": "GONE WITH THE WIND",
+    "YEAR": 1939,
+    "ACTOR": "Clark Gable's",
+    "CHARACTER": "Rhett Butler"
+  },
+  {
+    "#": 2,
+    "QUOTE": "I'm gonna make him an offer he can't refuse.",
+    "MOVIE": "THE GODFATHER",
+    "YEAR": 1972,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 3,
+    "QUOTE": "You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.",
+    "MOVIE": "ON THE WATERFRONT",
+    "YEAR": 1954,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 4,
+    "QUOTE": "Toto, I've a feeling we're not in Kansas anymore.",
+    "MOVIE": "THE WIZARD OF OZ",
+    "YEAR": 1939,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 5,
+    "QUOTE": "Here's looking at you, kid.",
+    "MOVIE": "CASABLANCA",
+    "YEAR": 1942,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 6,
+    "QUOTE": "Go ahead, make my day.",
+    "MOVIE": "SUDDEN IMPACT",
+    "YEAR": 1983,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 7,
+    "QUOTE": "All right, Mr. DeMille, I'm ready for my close-up.",
+    "MOVIE": "SUNSET BLVD.",
+    "YEAR": 1950,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 8,
+    "QUOTE": "May the Force be with you.",
+    "MOVIE": "STAR WARS",
+    "YEAR": 1977,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 9,
+    "QUOTE": "Fasten your seatbelts. It's going to be a bumpy night.",
+    "MOVIE": "ALL ABOUT EVE",
+    "YEAR": 1950,
+   "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  },
+  {
+    "#": 10,
+    "QUOTE": "You talking to me?",
+    "MOVIE": "TAXI DRIVER",
+    "YEAR": 1976,
+    "ACTOR": "Marlon Brando",
+    "CHARACTER": "Don Corleone"
+  }
 ];
+
+function getRandomQuote(random){
+var random = quotes[Math.floor(Math.random() * quotes.length)];
+    console.log(random);
+    console.log(random.QUOTE);
+    console.log(random.MOVIE);
+    console.log(random.YEAR);
+ 
+
+    return random;
+
+
+};
+function printQuote(addQoute){
+	console.log(getRandomQuote());
+	var logic=getRandomQuote();
+	var quoteOutput = "<p class='quote'>"+ logic.QUOTE+ "</p> <p class='source'>"+ logic.ACTOR+"<span class='citation'>"+ logic.MOVIE+"</span> <span class='year'>"+ logic.YEAR +"</span> </p>";
+	console.log(quoteOutput);
+	var addQoute = document.getElementById('quote-box').innerHTML = quoteOutput;
+	return addQoute;
+}
+
 
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
