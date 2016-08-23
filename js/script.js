@@ -13,8 +13,15 @@ var quotes = [{
     "Film": "The Godfather",
     "Year": 1972
 }, {
-    "Rank": 4,
+    "Rank": 3,
     "Quotation": "You don't understand! I coulda had class. I coulda been a contender. I could've been somebody, instead of a bum, which is what I am.",
+    "Character": "Terry Malloy",
+    "Actor": "Marlon Brando",
+    "Film": "On the Waterfront",
+    "Year": 1954
+}, {
+    "Rank": 4,
+    "Quotation": "Toto, I've got a feeling we're not in Kansas anymore.",
     "Character": "Dorothy Gale",
     "Actor": "Judy Garland",
     "Film": "The Wizard of Oz",
@@ -34,20 +41,27 @@ var quotes = [{
     "Film": "Sudden Impact",
     "Year": 1983
 }, {
-    "Rank": 8,
+    "Rank": 7,
     "Quotation": "All right, Mr. DeMille, I'm ready for my close-up.",
+    "Character": "Norma Desmond",
+    "Actor": "Gloria Swanson",
+    "Film": "Sunset Boulevard",
+    "Year": 1950
+}, {
+    "Rank": 8,
+    "Quotation": "May the Force be with you.",
     "Character": "Han Solo",
     "Actor": "Harrison Ford",
     "Film": "Star Wars",
     "Year": 1977
 }, {
     "Rank": 9,
-    "Quotation": "Fasten your seatbelts. It's going to be a bumpy night. ",
+    "Quotation": "Fasten your seatbelts. It's going to be a bumpy night.",
     "Character": "Margo Channing",
     "Actor": "Bette Davis",
     "Film": "All About Eve",
     "Year": 1950
-},{
+}, {
     "Rank": 10,
     "Quotation": "You talkin' to me?",
     "Character": "Travis Bickle",
@@ -62,8 +76,6 @@ function getRandomQuote(random) {
     console.log(random.QUOTE);
     console.log(random.MOVIE);
     console.log(random.YEAR);
-
-
     return random;
 
 
