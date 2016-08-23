@@ -1,4 +1,4 @@
-var quotes = [{
+var $quotes = [{
     "Rank": 1,
     "Quotation": "Frankly, my dear, I don't give a damn.",
     "Character": "Rhett Butler",
@@ -70,20 +70,35 @@ var quotes = [{
     "Year": 1976
 }]
 
-function getRandomQuote(random) {
-    var random = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log(random);
-    console.log(random.QUOTE);
-    console.log(random.MOVIE);
-    console.log(random.YEAR);
-    return random;
+function $getRandomQuote($random) {
+    var $random = $quotes[Math.floor(Math.random() * $quotes.length)];
+    console.log($random);
+    console.log($random.QUOTE);
+    console.log($random.MOVIE);
+    console.log($random.YEAR);
+    return $random;
 
 
 };
 
+function $bkgRandom($randomBkg) {
+
+    var $randomBkg = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+
+    if ($randomBkg  !== 'rgb(255,255,255)') {
+        document.body.style.backgroundColor = $randomBkg ;
+    }
+};
+function $BtnBackground($randomBtnBkg){
+    var $randomBtnBkg = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+     document.getElementById('loadQuote').style.backgroundColor = $randomBtnBkg;
+
+}
+
+// ev
 function printQuote(quoteOutput) {
-    console.log(getRandomQuote());
-    var logic = getRandomQuote();
+    console.log($getRandomQuote());
+    var logic = $getRandomQuote();
     var quoteOutput = "<p class='quote'>" + logic.Quotation + "</p> <p class='source'>" + logic.Actor + "<span class='citation'>" + logic.Film + "</span> <span class='year'>" + logic.Year + "</span> </p>";
     console.log(quoteOutput);
     var addQoute = document.getElementById('quote-box').innerHTML = quoteOutput;
@@ -94,3 +109,9 @@ function printQuote(quoteOutput) {
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+setInterval(function () {
+    printQuote();
+    $bkgRandom();
+    $BtnBackground();
+}, 10000);
